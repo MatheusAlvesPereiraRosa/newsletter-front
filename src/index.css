@@ -3,20 +3,25 @@
 @tailwind utilities;
 
 body {
+  @apply bg-cover;
+  background-image: url('./assets/Bg.png');
   background-color: #033b49;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*align-items: center;*/
   min-height: 100vh;
 }
 
 @layer base {
-
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: lexend, sans-serif
+    font-family: lexend, sans-serif;
   }
 
   p,
@@ -31,7 +36,7 @@ body {
   }
 
   body::-webkit-scrollbar {
-    width: .95rem;
+    width: 0.95rem;
   }
 
   body::-webkit-scrollbar-track {
