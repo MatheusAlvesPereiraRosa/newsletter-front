@@ -12,8 +12,8 @@ const router = createBrowserRouter([
   },
   {
     path: '/sucess',
-    element: <Success />
-  }
+    element: <Success />,
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
