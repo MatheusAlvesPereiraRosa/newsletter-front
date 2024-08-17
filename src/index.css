@@ -19,11 +19,12 @@ body {
 input:focus-visible {
   @apply border-[#E30161] ring-2 ring-[#E30161];
   outline: none;
-  transition: border-color 0.3s, ring-color 0.3s;
+  transition:
+    border-color 0.3s,
+    ring-color 0.3s;
 }
 
 @layer base {
-
   h1,
   h2,
   h3,
