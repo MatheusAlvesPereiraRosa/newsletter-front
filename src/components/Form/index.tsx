@@ -19,16 +19,20 @@ export const Form = () => {
 
   const navigate = useNavigate()
 
-  const { setAlert } = useContext(AlertContext);
+  const { setAlert } = useContext(AlertContext)
 
   const onSubmit: SubmitHandler<IFormInputs> = async (data) => {
     console.log(data)
-    setAlert({ isVisible: true, type: 'success', message: 'Successfully registered!' });
+    setAlert({
+      isVisible: true,
+      type: 'success',
+      message: 'Successfully registered!',
+    })
 
-    navigate("/sucess")
+    navigate('/sucess')
 
     setTimeout(() => {
-      setAlert({isVisible: false})
+      setAlert({ isVisible: false })
     }, 3000)
   }
 
