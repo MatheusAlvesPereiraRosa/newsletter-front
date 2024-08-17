@@ -30,12 +30,12 @@ export const Form = () => {
         <input
           id="fullName"
           placeholder="Insira seu nome completo"
-          className="px-4 py-[.65rem] bg-gray-500 bg-opacity-60 rounded-full"
+          className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
           {...register('fullName', { required: true })}
         />
         {errors.fullName && (
-          <span className="text-red-500">Nome Completo é obrigatório.</span>
+          <span className="text-red-500 mt-1">Nome Completo é obrigatório.</span>
         )}
       </div>
 
@@ -46,12 +46,12 @@ export const Form = () => {
         <input
           id="email"
           placeholder="Insira seu e-mail"
-          className="px-4 py-[.65rem] bg-gray-500 bg-opacity-60 rounded-full"
+          className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="email"
           {...register('email', { required: true })}
         />
         {errors.email && (
-          <span className="text-red-500">E-mail é obrigatório.</span>
+          <span className="text-red-500 mt-1">E-mail é obrigatório.</span>
         )}
       </div>
 
@@ -62,12 +62,12 @@ export const Form = () => {
         <input
           id="phone"
           placeholder="(DDD) 9 0000-0000"
-          className="px-4 py-[.65rem] bg-gray-500 bg-opacity-60 rounded-full"
+          className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
           {...register('phone', { required: true })}
         />
         {errors.phone && (
-          <span className="text-red-500">Telefone é obrigatório.</span>
+          <span className="text-red-500 mt-1">Telefone é obrigatório.</span>
         )}
       </div>
 
@@ -78,18 +78,18 @@ export const Form = () => {
         <input
           id="business"
           placeholder="Insira sua empresa"
-          className="px-4 py-[.65rem] bg-gray-500 bg-opacity-60 rounded-full"
+          className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
           {...register('business', { required: true })}
         />
         {errors.business && (
-          <span className="text-red-500">Empresa é obrigatória.</span>
+          <span className="text-red-500 mt-1">Empresa é obrigatória.</span>
         )}
       </div>
 
       <button
         type="submit"
-        className="max-w-[189px] text-[18px] mt-2 p-3 bg-[#E30161] rounded-md text-white font-medium"
+        className="sm:max-w-[189px] text-[18px] mt-2 p-3 bg-[#E30161] hover:bg-white hover:text-[#E30161] transition duration-300 rounded-md text-white font-medium"
       >
         Realizar inscrição
       </button>
