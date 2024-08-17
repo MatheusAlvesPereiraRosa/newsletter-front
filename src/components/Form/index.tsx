@@ -1,4 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
+import { useContext } from 'react'
+import { AlertContext } from '../../context/AlertContext'
+import { useNavigate } from 'react-router-dom'
 
 interface IFormInputs {
   fullName: string
@@ -14,8 +17,19 @@ export const Form = () => {
     formState: { errors },
   } = useForm<IFormInputs>()
 
+  const navigate = useNavigate()
+
+  const { setAlert } = useContext(AlertContext);
+
   const onSubmit: SubmitHandler<IFormInputs> = async (data) => {
     console.log(data)
+    setAlert({ isVisible: true, type: 'success', message: 'Successfully registered!' });
+
+    navigate("/sucess")
+
+    setTimeout(() => {
+      setAlert({isVisible: false})
+    }, 3000)
   }
 
   return (
@@ -35,7 +49,9 @@ export const Form = () => {
           {...register('fullName', { required: true })}
         />
         {errors.fullName && (
-          <span className="text-red-500 mt-1">Nome Completo é obrigatório.</span>
+          <span className="text-red-500 mt-1">
+            Nome Completo é obrigatório.
+          </span>
         )}
       </div>
 
