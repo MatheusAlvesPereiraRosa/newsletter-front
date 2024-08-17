@@ -23,7 +23,7 @@ const initialAlert: Alert = {
 // Create the context with the initial value and type
 export const AlertContext = createContext<AlertContextType>({
   alert: initialAlert,
-  setAlert: () => {}, // A placeholder function
+  setAlert: () => {},
 })
 
 interface Props {

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { App } from './templates/App'
 import './index.css'
 import { Success } from './templates/Success'
-import { AlertProvider } from './context/AlertContext'
+import { AlertProvider } from './Context/AlertContext'
 
 const router = createBrowserRouter([
   {
