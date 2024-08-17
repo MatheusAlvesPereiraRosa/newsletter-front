@@ -1,14 +1,14 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { useContext } from 'react';
-import axios from 'axios'; // Import axios
-import { AlertContext } from '../../Context/AlertContext';
-import { useNavigate } from 'react-router-dom';
+import { useForm, SubmitHandler } from 'react-hook-form'
+import { useContext } from 'react'
+import axios from 'axios' // Import axios
+import { AlertContext } from '../../Context/AlertContext'
+import { useNavigate } from 'react-router-dom'
 
 interface IFormInputs {
-  fullName: string;
-  email: string;
-  phone: string;
-  business: string;
+  fullName: string
+  email: string
+  phone: string
+  business: string
 }
 
 export const Form = () => {
@@ -16,40 +16,60 @@ export const Form = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormInputs>();
+  } = useForm<IFormInputs>()
 
-  const navigate = useNavigate();
-  const { setAlert } = useContext(AlertContext);
+  const navigate = useNavigate()
+  const { setAlert } = useContext(AlertContext)
 
   const onSubmit: SubmitHandler<IFormInputs> = async (data) => {
     try {
-      const response = await axios.post('http://localhost:3000/user/create', data, {
-        headers: { 'Content-Type': 'application/json' },
-      });
+      const response = await axios.post(
+        'http://localhost:3000/user/create',
+        data,
+        {
+          headers: { 'Content-Type': 'application/json' },
+        }
+      )
 
       if (response.status === 200 || response.status === 201) {
-        setAlert({ isVisible: true, type: 'success', message: 'Registrado com sucesso!' });
-        navigate('/sucess');
+        setAlert({
+          isVisible: true,
+          type: 'success',
+          message: 'Registrado com sucesso!',
+        })
+        navigate('/sucess')
       }
     } catch (error) {
       if (axios.isAxiosError(error)) {
         if (error.response && error.response.status === 400) {
-          const errorMessage = error.response.data.message.join(', ');
-          setAlert({ isVisible: true, type: 'error', message: errorMessage });
+          const errorMessage = error.response.data.message.join(', ')
+          setAlert({ isVisible: true, type: 'error', message: errorMessage })
         } else if (error.response && error.response.status === 409) {
-          setAlert({ isVisible: true, type: 'error', message: "O email já está em uso!" });
+          setAlert({
+            isVisible: true,
+            type: 'error',
+            message: 'O email já está em uso!',
+          })
         } else {
-          setAlert({ isVisible: true, type: 'error', message: 'Falha ao registrar!' });
+          setAlert({
+            isVisible: true,
+            type: 'error',
+            message: 'Falha ao registrar!',
+          })
         }
       } else {
-        setAlert({ isVisible: true, type: 'error', message: 'Aconteceu um erro. Tente de novo mais tarde!' });
+        setAlert({
+          isVisible: true,
+          type: 'error',
+          message: 'Aconteceu um erro. Tente de novo mais tarde!',
+        })
       }
     }
 
     setTimeout(() => {
-      setAlert({ isVisible: false });
-    }, 3000);
-  };
+      setAlert({ isVisible: false })
+    }, 3000)
+  }
 
   return (
     <form
@@ -129,5 +149,5 @@ export const Form = () => {
         Realizar inscrição
       </button>
     </form>
-  );
-};
+  )
+}
