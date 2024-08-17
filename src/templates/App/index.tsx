@@ -1,11 +1,17 @@
 import { Form } from "../../components/Form"
-import women from "../../assets/glad-young-woman-with-curly-bushy-hair-holds-modern-mobile-phone-downloads-amazing-application-surfs-social-networks-wears-casual-blue-jumper 1 1.png"
+
+import women from "../../assets/images/women.png"
+import logo from "../../assets/images/LOGO.png"
 
 export const App = () => {
   return (
-    <main className="flex flex-row items-center pt-28 md:mt-0 mb-20">
-      <section className="lg:ms-[7.5rem] lg:me-0 md:ms-[6rem] md:me-0 mx-[4.5rem]">
-        <h1 className="text-[39px] text-white font-bold mb-12">Inscreva-se em nossa newsletter.</h1>
+    <main className="flex flex-row items-center px-6 sm:px-0 sm:my-0 my-20 md:mt-0">
+      <section className="flex flex-col justify-between ms-0 lg:ms-[7.5rem] md:ms-[6rem] sm:ms-[2.5rem] md:me-0">
+        <div className="relative top-[-20px] pb-10">
+          <img src={logo} />
+        </div>
+
+        <h1 className="text-[39px] text-white text-center sm:text-left font-bold mb-8">Inscreva-se em nossa newsletter.</h1>
 
         <Form />
       </section>

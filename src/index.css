@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-  @apply bg-cover;
-  background-image: url('./assets/Bg.png');
+  @apply bg-cover bg-center;
+  background-image: url('./assets/images/bg-alone.png');
   background-color: #033b49;
   position: relative;
   display: flex;

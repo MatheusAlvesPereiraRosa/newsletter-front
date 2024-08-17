@@ -24,7 +24,7 @@ export const Form = () => {
         <input placeholder="Insira sua empresa" className="px-4 py-[.65rem] bg-gray-500 bg-opacity-60 rounded-full" name="business" type="text" />
       </div>
 
-      <button className="max-w-[189px] text-[18px] p-3 bg-[#E30161] rounded-md text-white font-medium">
+      <button className="max-w-[189px] text-[18px] mt-2 p-3 bg-[#E30161] rounded-md text-white font-medium">
         Realizar inscrição
       </button>
     </form>
