@@ -43,6 +43,14 @@ Após isso rode o projeto com o comando npm run dev
 
 E pronto, o projeto já o Front-End já vai estar rodando. Vale salienter que o Back-End deve ter sido totalmente funcional antes para que as funcionalidades no Front funcionem normalmente.
 
+## Testes
+
+Rode:
+
+```bash
+  npm run test
+```
+
 ## Bibliotecas utilizadas
 
 ### Dependencies
