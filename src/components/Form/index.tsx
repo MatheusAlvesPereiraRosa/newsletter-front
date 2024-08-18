@@ -42,13 +42,16 @@ export const Form = () => {
     } catch (error) {
       if (axios.isAxiosError(error)) {
         if (error.response && error.response.status === 400) {
-          const errorMessage = error.response.data.message.join(', ')
+          const errorMessage = error.response.data.message
+
           setAlert({ isVisible: true, type: 'error', message: errorMessage })
         } else if (error.response && error.response.status === 409) {
+          const errorMessage = error.response.data.message
+
           setAlert({
             isVisible: true,
             type: 'error',
-            message: 'O email já está em uso!',
+            message: errorMessage,
           })
         } else {
           setAlert({
