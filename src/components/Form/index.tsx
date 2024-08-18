@@ -82,10 +82,7 @@ export const Form = () => {
       className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-[700px]"
     >
       <div className="flex flex-col">
-        <label
-          className="mb-3 text-gray-200 font-[20px]"
-          htmlFor="fullName"
-        >
+        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="fullName">
           Nome Completo
         </label>
         <input
@@ -104,10 +101,7 @@ export const Form = () => {
       </div>
 
       <div className="flex flex-col">
-        <label
-          className="mb-3 text-gray-200 font-[20px]"
-          htmlFor="email"
-        >
+        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="email">
           E-mail
         </label>
         <input
@@ -124,10 +118,7 @@ export const Form = () => {
       </div>
 
       <div className="flex flex-col">
-        <label
-          className="mb-3 text-gray-200 font-[20px]"
-          htmlFor="phone"
-        >
+        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="phone">
           Telefone
         </label>
         <input
@@ -144,10 +135,7 @@ export const Form = () => {
       </div>
 
       <div className="flex flex-col">
-        <label
-          className="mb-3 text-gray-200 font-[20px]"
-          htmlFor="business"
-        >
+        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="business">
           Empresa
         </label>
         <input

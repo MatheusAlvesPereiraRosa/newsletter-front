@@ -7,4 +7,4 @@ export default {
     '^.+\\.jsx?$': 'babel-jest', // Use babel-jest for JS/JSX
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-};
+}
