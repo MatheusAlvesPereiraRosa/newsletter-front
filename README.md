@@ -1,5 +1,5 @@
 
-# geo-management-front
+# newsletter-front
 
 Esse teste tem o objetivo de me ajudar a passar no processo seletivo da vaga de desenvolvedor Fullstack. Segue abaixo algumas informações sobre como ele foi feito e como rodá-lo.
 
