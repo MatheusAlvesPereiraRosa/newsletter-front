@@ -1,7 +1,9 @@
+// Form.jsx
+import React from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useContext } from 'react'
-import axios from 'axios' // Import axios
-import { AlertContext } from '../../Context/AlertContext'
+import axios from 'axios'
+import { AlertContext } from '../../context/AlertContext'
 import { useNavigate } from 'react-router-dom'
 
 interface IFormInputs {
@@ -80,11 +82,15 @@ export const Form = () => {
       className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:w-[700px]"
     >
       <div className="flex flex-col">
-        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="fullName">
+        <label
+          className="mb-3 text-gray-200 font-[20px]"
+          htmlFor="fullName"
+        >
           Nome Completo
         </label>
         <input
           id="fullName"
+          data-testid="fullName"
           placeholder="Insira seu nome completo"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
@@ -98,11 +104,15 @@ export const Form = () => {
       </div>
 
       <div className="flex flex-col">
-        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="email">
+        <label
+          className="mb-3 text-gray-200 font-[20px]"
+          htmlFor="email"
+        >
           E-mail
         </label>
         <input
           id="email"
+          data-testid="email"
           placeholder="Insira seu e-mail"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="email"
@@ -114,11 +124,15 @@ export const Form = () => {
       </div>
 
       <div className="flex flex-col">
-        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="phone">
+        <label
+          className="mb-3 text-gray-200 font-[20px]"
+          htmlFor="phone"
+        >
           Telefone
         </label>
         <input
           id="phone"
+          data-testid="phone"
           placeholder="(DDD) 9 0000-0000"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
@@ -130,11 +144,15 @@ export const Form = () => {
       </div>
 
       <div className="flex flex-col">
-        <label className="mb-3 text-gray-200 font-[20px]" htmlFor="business">
+        <label
+          className="mb-3 text-gray-200 font-[20px]"
+          htmlFor="business"
+        >
           Empresa
         </label>
         <input
           id="business"
+          data-testid="business"
           placeholder="Insira sua empresa"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
@@ -147,6 +165,7 @@ export const Form = () => {
 
       <button
         type="submit"
+        data-testid="submit-button"
         className="sm:max-w-[189px] text-[18px] mt-2 p-3 bg-[#E30161] hover:bg-white hover:text-[#E30161] transition duration-300 rounded-md text-white font-medium"
       >
         Realizar inscrição
