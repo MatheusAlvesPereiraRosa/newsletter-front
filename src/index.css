@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default body style to match the figma design */
 body {
   @apply bg-cover bg-center;
   background-image: url('./assets/images/bg-alone.png');
@@ -12,6 +13,15 @@ body {
   justify-content: center;
   /*align-items: center;*/
   min-height: 100vh;
+}
+
+/* Tailwind doesn't have an focus-visible property by default */
+input:focus-visible {
+  @apply border-[#E30161] ring-2 ring-[#E30161];
+  outline: none;
+  transition:
+    border-color 0.3s,
+    ring-color 0.3s;
 }
 
 @layer base {

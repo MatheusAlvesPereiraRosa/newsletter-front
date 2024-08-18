@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { App } from './templates/App'
 import './index.css'
 import { Success } from './templates/Success'
+import { AlertProvider } from './Context/AlertContext'
 
 const router = createBrowserRouter([
   {
@@ -12,12 +13,14 @@ const router = createBrowserRouter([
   },
   {
     path: '/sucess',
-    element: <Success />
-  }
+    element: <Success />,
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AlertProvider>
+      <RouterProvider router={router} />
+    </AlertProvider>
   </StrictMode>
 )
