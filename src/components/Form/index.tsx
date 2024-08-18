@@ -1,7 +1,9 @@
+// Form.jsx
+import React from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useContext } from 'react'
-import axios from 'axios' // Import axios
-import { AlertContext } from '../../Context/AlertContext'
+import axios from 'axios'
+import { AlertContext } from '../../context/AlertContext'
 import { useNavigate } from 'react-router-dom'
 
 interface IFormInputs {
@@ -85,6 +87,7 @@ export const Form = () => {
         </label>
         <input
           id="fullName"
+          data-testid="fullName"
           placeholder="Insira seu nome completo"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
@@ -103,6 +106,7 @@ export const Form = () => {
         </label>
         <input
           id="email"
+          data-testid="email"
           placeholder="Insira seu e-mail"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="email"
@@ -119,6 +123,7 @@ export const Form = () => {
         </label>
         <input
           id="phone"
+          data-testid="phone"
           placeholder="(DDD) 9 0000-0000"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
@@ -135,6 +140,7 @@ export const Form = () => {
         </label>
         <input
           id="business"
+          data-testid="business"
           placeholder="Insira sua empresa"
           className="px-4 py-[.65rem] bg-gray-500 text-gray-300 bg-opacity-60 rounded-full"
           type="text"
@@ -147,6 +153,7 @@ export const Form = () => {
 
       <button
         type="submit"
+        data-testid="submit-button"
         className="sm:max-w-[189px] text-[18px] mt-2 p-3 bg-[#E30161] hover:bg-white hover:text-[#E30161] transition duration-300 rounded-md text-white font-medium"
       >
         Realizar inscrição
