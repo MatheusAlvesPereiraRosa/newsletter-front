@@ -1,52 +1,55 @@
-# React + TypeScript + Vite
+# funimage-challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse teste tem o objetivo de me ajudar a passar no processo seletivo da vaga de desenvolvedor Fullstack. Segue abaixo algumas informações sobre como ele foi feito e como rodá-lo.
 
-Currently, two official plugins are available:
+O back-end foi feito utilizando Nest por sua praticidade envolvendo testes (Jest) e sua metologia (services, modules e controllers).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Comandos para executar
 
-## Expanding the ESLint configuration
+### Banco de dados
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Primeiramente, certifique-se que você possui o postgres SQL baixado em sua máquina e rodando:
 
-- Configure the top-level `parserOptions` property like this:
+Link do site: [https://neo4j.com/download/](https://www.postgresql.org/download/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Configure o banco de dados em sua máquina e depois abra o pgAdmin para entrar no gerenciador de banco de dados.
+
+Após isso, crie uma base de dados chamada **"newsletter"**.
+
+### Aplicação
+
+Execute um git clone no seu terminal de preferência com o link (HTTPS ou SSH) do repositório:
+
+```
+  git clone https://github.com/MatheusAlvesPereiraRosa/newsletter-back.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Entre no arquivo do repositório local e rode:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```
+  npm i
 ```
 
-# newsletter-front
+Configure seu arquivo .env para ter os dados necessário para se conectar ao seu banco de dados
+
+Ex de .env.:
+
+```
+  DATABASE_URL="postgresql://<seu-usuário>:<sua-senha>@localhost:5432/newsletter?schema=public"
+```
+
+Depois rode:
+
+```
+  npm run start:dev
+```
+
+Após isso sua aplicação irá iniciar e você sera levado a página inicial com tudo funcionando.
+
+### Testes
+
+Com o bando de dados funcionando, rode o seguinte comando para executar os testes de integração no back-end:
+
+```
+  npm run test
+```
