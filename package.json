@@ -11,7 +11,7 @@
     "format": "prettier --write .",
     "precommit": "npm run lint && npm run format && npm add -A .",
     "prepare": "husky",
-    "test": "jest"
+    "test": "npx jest --clearCache && jest"
   },
   "husky": {
     "hooks": {
