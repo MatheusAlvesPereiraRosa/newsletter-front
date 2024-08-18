@@ -2,9 +2,9 @@ import React from 'react'
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { Form } from './index'
 import { AlertContext } from '../../context/AlertContext'
-import { BrowserRouter } from 'react-router-dom' 
+import { BrowserRouter } from 'react-router-dom'
 import axios from 'axios'
-import MockAdapter from 'axios-mock-adapter' 
+import MockAdapter from 'axios-mock-adapter'
 
 const mock = new MockAdapter(axios)
 
@@ -28,27 +28,33 @@ describe('Form Component', () => {
   test('renders form inputs and submit button', () => {
     const setAlert = jest.fn()
 
-    renderForm(setAlert);
+    renderForm(setAlert)
 
-    expect(screen.getByTestId('fullName')).toBeInTheDocument();
-    expect(screen.getByTestId('email')).toBeInTheDocument();
-    expect(screen.getByTestId('phone')).toBeInTheDocument();
-    expect(screen.getByTestId('business')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /Realizar inscrição/i })).toBeInTheDocument();
-  });
+    expect(screen.getByTestId('fullName')).toBeInTheDocument()
+    expect(screen.getByTestId('email')).toBeInTheDocument()
+    expect(screen.getByTestId('phone')).toBeInTheDocument()
+    expect(screen.getByTestId('business')).toBeInTheDocument()
+    expect(
+      screen.getByRole('button', { name: /Realizar inscrição/i })
+    ).toBeInTheDocument()
+  })
 
   test('displays required field errors when submitting an empty form', async () => {
     const setAlert = jest.fn()
 
-    renderForm(setAlert);
-    
-    fireEvent.submit(screen.getByRole('button', { name: /Realizar inscrição/i }));
+    renderForm(setAlert)
 
-    expect(await screen.findByText(/Nome Completo é obrigatório/i)).toBeInTheDocument();
-    expect(screen.getByText(/E-mail é obrigatório/i)).toBeInTheDocument();
-    expect(screen.getByText(/Telefone é obrigatório/i)).toBeInTheDocument();
-    expect(screen.getByText(/Empresa é obrigatória/i)).toBeInTheDocument();
-  });
+    fireEvent.submit(
+      screen.getByRole('button', { name: /Realizar inscrição/i })
+    )
+
+    expect(
+      await screen.findByText(/Nome Completo é obrigatório/i)
+    ).toBeInTheDocument()
+    expect(screen.getByText(/E-mail é obrigatório/i)).toBeInTheDocument()
+    expect(screen.getByText(/Telefone é obrigatório/i)).toBeInTheDocument()
+    expect(screen.getByText(/Empresa é obrigatória/i)).toBeInTheDocument()
+  })
 
   test('submits form data successfully and displays success alert', async () => {
     // Mock the successful POST request
